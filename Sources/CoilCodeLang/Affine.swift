@@ -1,7 +1,7 @@
 import Foundation
 import CGLib
 
-enum Affine {
+public enum Affine {
     case matrix(Value, Value, Value, Value, Value, Value)
     case rotate(Value)
     case scale(Value)
@@ -15,7 +15,7 @@ enum Affine {
     indirect case concat(Affine, Affine)
 }
 
-extension Affine {
+public extension Affine {
 
     func cgAffineTransform(mediator: ValueMediator) throws -> CGAffineTransform {
         switch self {
@@ -64,7 +64,7 @@ extension Affine {
     }
 }
 
-extension Affine {
+public extension Affine {
 
     static func * (l: Affine, r: Affine) -> Affine {
         return .concat(l, r)

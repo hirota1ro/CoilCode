@@ -1,18 +1,18 @@
 import Foundation
 
-struct Replacement {
-    let symbol: Symbol
-    let name: String
-    let affine: Affine?
-    let predicate: Predicate?
+public struct Replacement {
+    public let symbol: Symbol
+    public let name: String
+    public let affine: Affine?
+    public let predicate: Predicate?
 }
 
-enum Symbol {
+public enum Symbol {
     case terminal
     case nonterminal
 }
 
-extension Replacement {
+public extension Replacement {
 
     // Path Replacement
 

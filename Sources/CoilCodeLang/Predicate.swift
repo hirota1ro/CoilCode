@@ -1,6 +1,6 @@
 import Foundation
 
-enum Predicate {
+public enum Predicate {
     case hue(Value)
     case saturation(Value)
     case brightness(Value)
@@ -11,13 +11,13 @@ enum Predicate {
     indirect case concat(Predicate, Predicate)
 }
 
-extension Predicate {
+public extension Predicate {
     static func * (l: Predicate, r: Predicate) -> Predicate {
         return .concat(l, r)
     }
 }
 
-extension Predicate {
+public extension Predicate {
 
     func run(brush oldBrush: Brush, mediator: ValueMediator) throws -> Brush {
         var brush = oldBrush

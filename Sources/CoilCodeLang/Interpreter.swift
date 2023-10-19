@@ -2,19 +2,19 @@ import Foundation
 import CGLib
 import Sprite
 
-class Interpreter {
-    var generator: LinearCongruentialGenerator64
+public class Interpreter {
+    public var generator: LinearCongruentialGenerator64
 
-    var shapeMap: [String: Shape] = [:]
-    var pathMap: [String: Path] = [:]
+    public var shapeMap: [String: Shape] = [:]
+    public var pathMap: [String: Path] = [:]
     var probMap: [String: Probability] = [:]
     var stack: [Env] = []
-    var ctm: CGAffineTransform = .identity
+    public var ctm: CGAffineTransform = .identity
 
-    var scaleLimit: CGFloat = 0.01
-    var depthLimit: Int = 10
+    public var scaleLimit: CGFloat = 0.01
+    public var depthLimit: Int = 10
 
-    init(seed: UInt64) {
+    public init(seed: UInt64) {
         self.generator = LinearCongruentialGenerator64(seed: seed)
     }
 }
@@ -27,7 +27,7 @@ extension Interpreter {
         let ctm: CGAffineTransform
     }
 
-    func interpret(script: Script) throws -> Sprite {
+    public func interpret(script: Script) throws -> Sprite {
         guard stack.isEmpty else { throw InterpreterError.bug }
         push(sprite: Sprite(), brush: Brush(thickness: 0.1, color: .black))
         try visit(script: script)
@@ -128,10 +128,10 @@ extension Interpreter {
 }
 
 extension Interpreter: ValueMediator {
-    func obtain(name: String) throws -> Float {
+    public func obtain(name: String) throws -> Float {
         throw InterpreterError.noVariable(name)
     }
-    func random(in r: Range<Float>) -> Float {
+    public func random(in r: Range<Float>) -> Float {
         return Float.random(in: r, using: &generator)
     }
 }

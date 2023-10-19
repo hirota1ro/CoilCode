@@ -1,11 +1,11 @@
 import Foundation
 
-struct Brush {
-    var thickness: Float = 0.1
-    var color: Color = .black
+public struct Brush {
+    public var thickness: Float = 0.1
+    public var color: Color = .black
 }
 
-extension Brush {
+public extension Brush {
 
     var strokeWidth: CGFloat { return CGFloat(thickness) }
     var cgColor: CGColor { return color.cgColor }

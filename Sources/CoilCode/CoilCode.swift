@@ -1,5 +1,6 @@
 import Foundation
 import ArgumentParser
+import CoilCodeLang
 
 @main
 struct CoilCode: ParsableCommand {

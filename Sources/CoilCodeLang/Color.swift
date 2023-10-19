@@ -1,18 +1,18 @@
 import Foundation
 
-struct Color {
-    var components: Components
-    var alpha: Float
+public struct Color {
+    public var components: Components
+    public var alpha: Float
 }
 
-extension Color {
+public extension Color {
     enum Components {
         case RGB(Float, Float, Float)
         case HSB(Float, Float, Float)
     }
 }
 
-extension Color.Components {
+public extension Color.Components {
 
     var rgb: Self {
         get {
@@ -192,7 +192,7 @@ extension Color.Components {
     }
 }
 
-extension Color {
+public extension Color {
 
     var rbg: Components {
         get { return components.rgb }
@@ -245,7 +245,7 @@ extension Color {
     }
 }
 
-extension Color {
+public extension Color {
 
     init(red: Float, green: Float, blue: Float, alpha: Float) {
         self.components = Components.RGB(red, green, blue)
@@ -270,14 +270,14 @@ extension Color {
 extension Color: Equatable {
     static var accuracy: Float = 1e-5
 
-    static func == (l: Color, r: Color) -> Bool {
+    public static func == (l: Color, r: Color) -> Bool {
         return l.components.equivarent(r.components, accuracy: accuracy) && abs(l.alpha - r.alpha) < accuracy
     }
 }
 
 extension Color.Components: CustomStringConvertible {
 
-    var description: String {
+    public var description: String {
         switch self {
         case let .RGB(r, g, b):
             return "red: \(r), green: \(g), blue: \(b)"
@@ -289,12 +289,12 @@ extension Color.Components: CustomStringConvertible {
 
 extension Color: CustomStringConvertible {
 
-    var description: String {
+    public var description: String {
         return "Color(\(components), alpha: \(alpha))"
     }
 }
 
-extension Color {
+public extension Color {
 
     static func HSBtoRGB(hue: Float, saturation: Float, brightness: Float) -> (red: Float, green: Float, blue: Float) {
         if saturation == 0 {

@@ -1,17 +1,17 @@
 import Foundation
 
-enum Value {
+public enum Value {
     case f(Float)
     case v(String)
     case r(Range<Float>)
 }
 
-protocol ValueMediator {
+public protocol ValueMediator {
     func obtain(name: String) throws -> Float
     func random(in r: Range<Float>) -> Float
 }
 
-extension Value {
+public extension Value {
 
     func resolve(_ mediator: ValueMediator) throws -> Float {
         switch self {

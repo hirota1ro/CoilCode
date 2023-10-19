@@ -1,11 +1,11 @@
 import Foundation
 
-struct Rule {
-    let weight: Float
-    let replacements: [Replacement]
+public struct Rule {
+    public let weight: Float
+    public let replacements: [Replacement]
 }
 
-extension Rule {
+public extension Rule {
 
     static func rule(weight: Float, replacement: Replacement) -> Rule {
         return Rule(weight: weight, replacements: [replacement])

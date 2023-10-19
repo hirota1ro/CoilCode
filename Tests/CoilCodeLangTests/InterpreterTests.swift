@@ -1,5 +1,5 @@
 import XCTest
-@testable import CoilCode
+@testable import CoilCodeLang
 
 class InterpreterTests: XCTestCase {
 
@@ -7,7 +7,7 @@ class InterpreterTests: XCTestCase {
         let repl = Replacement(symbol: .nonterminal, name: "abc", affine: nil, predicate: nil)
         let rule = Rule(weight: 1, replacements: [repl, repl, repl])
         let shape = Shape(name: "abc", rules: [rule])
-        let script = Script(start: "abc", declare: .declare(.SQUARE), shapes: [shape])
+        let script = Script(start: "abc", declare: .declare(.SQUARE), shape: shape)
         let interpreter = Interpreter(seed: 0)
         interpreter.depthLimit = 2
         let sprite = try interpreter.interpret(script: script)

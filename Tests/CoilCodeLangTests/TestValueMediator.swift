@@ -1,5 +1,5 @@
 import XCTest
-@testable import CoilCode
+@testable import CoilCodeLang
 
 struct TestValueMediator {
     let dict: [String: Float]

@@ -1,11 +1,11 @@
 import Foundation
 
-struct Shape {
-    let name: String
-    let rules: [Rule]
+public struct Shape {
+    public let name: String
+    public let rules: [Rule]
 }
 
-extension Shape {
+public extension Shape {
 
     static func shape(name: String, rule: Rule) -> Shape {
         return Shape(name: name, rules: [rule])
@@ -16,7 +16,7 @@ extension Shape {
     }
 }
 
-extension Shape {
+public extension Shape {
 
     var weightVector: [Float] {
         return rules.map { $0.weight }

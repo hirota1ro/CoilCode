@@ -1,10 +1,14 @@
 import Foundation
 
-struct Declare {
-    let paths: [Path]
+public struct Declare {
+    public let paths: [Path]
+
+    public init(paths: [Path]) {
+        self.paths = paths
+    }
 }
 
-extension Declare {
+public extension Declare {
 
     static func declare(path: Path) -> Declare {
         return Declare(paths: [path])

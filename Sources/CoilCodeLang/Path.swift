@@ -1,12 +1,17 @@
 import Foundation
 import Sprite
 
-struct Path {
-    let name: String
-    let g: (Brush) -> Graphics
+public struct Path {
+    public let name: String
+    public let g: (Brush) -> Graphics
+
+    public init(name: String, g: @escaping (Brush) -> Graphics) {
+        self.name = name
+        self.g = g
+    }
 }
 
-extension Path {
+public extension Path {
 
     static let SQUARE = Path(name: "SQUARE", g: square)
     static func square(brush: Brush) -> Graphics {

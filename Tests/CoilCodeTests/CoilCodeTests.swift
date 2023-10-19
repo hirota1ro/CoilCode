@@ -1,5 +1,6 @@
 import XCTest
 @testable import CoilCode
+import CoilCodeLang
 import Sprite
 
 class CoilCodeTests: XCTestCase {
