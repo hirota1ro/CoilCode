@@ -1,6 +1,6 @@
 import Foundation
 
-extension CGPath {
+public extension CGPath {
 
     static func rect(_ rect: CGRect) -> CGPath {
         return CGPath(rect: rect, transform: nil)
@@ -49,7 +49,7 @@ extension CGPath {
     }
 }
 
-extension CGPath {
+public extension CGPath {
     enum Segment {
         case M(to: CGPoint)
         case L(to: CGPoint)
@@ -59,7 +59,7 @@ extension CGPath {
     }
 }
 
-extension CGPath.Segment {
+public extension CGPath.Segment {
 
     func build(path: CGMutablePath) {
         switch self {

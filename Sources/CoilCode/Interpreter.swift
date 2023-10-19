@@ -1,4 +1,5 @@
 import Foundation
+import CGLib
 
 class Interpreter {
     var generator: LinearCongruentialGenerator64

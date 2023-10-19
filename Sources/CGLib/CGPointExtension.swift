@@ -1,6 +1,6 @@
 import CoreGraphics
 
-extension CGPoint {
+public extension CGPoint {
     var quadrance: CGFloat { return x * x + y * y }
     var norm: CGFloat { return hypot(x, y) }
     var normalized: CGPoint { return self / norm }
@@ -19,7 +19,7 @@ extension CGPoint {
     init(fromAngle t: CGFloat) { self.init(x: cos(t), y: sin(t)) }
 }
 
-extension CGPoint {
+public extension CGPoint {
     static func + (a: CGPoint, b: CGPoint) -> CGPoint { return CGPoint(x: a.x + b.x, y: a.y + b.y) }
     static func - (a: CGPoint, b: CGPoint) -> CGPoint { return CGPoint(x: a.x - b.x, y: a.y - b.y) }
     static func * (v: CGPoint, s: CGFloat) -> CGPoint { return CGPoint(x: v.x * s, y: v.y * s) }

@@ -1,5 +1,5 @@
 import XCTest
-@testable import CoilCode
+@testable import CGLib
 
 class CGRectExtensionTests: XCTestCase {
 

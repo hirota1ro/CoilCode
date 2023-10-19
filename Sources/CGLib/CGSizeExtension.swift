@@ -1,6 +1,6 @@
 import CoreGraphics
 
-extension CGSize {
+public extension CGSize {
     func scaleToFit(_ to: CGSize) -> CGFloat { return Swift.min(to.width / width, to.height / height) }
 }
 

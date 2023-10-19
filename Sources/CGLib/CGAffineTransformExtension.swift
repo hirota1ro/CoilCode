@@ -1,10 +1,10 @@
 import CoreGraphics
 
-extension CGAffineTransform {
+public extension CGAffineTransform {
     var determinant: CGFloat { return a*d - b*c }
 }
 
-extension CGAffineTransform {
+public extension CGAffineTransform {
     init(skewX sx: CGFloat, y sy: CGFloat) { self.init(a: 1, b: sy, c: sx, d: 1, tx:0 , ty: 0) }
 
     static func flip(angle t: CGFloat) -> CGAffineTransform {
@@ -15,7 +15,7 @@ extension CGAffineTransform {
     }
 }
 
-extension CGAffineTransform {
+public extension CGAffineTransform {
     static func * (a: CGAffineTransform, b: CGAffineTransform) -> CGAffineTransform { return a.concatenating(b) }
     static func * (p: CGPoint, a: CGAffineTransform) -> CGPoint { return p.applying(a) }
     static func * (r: CGRect, a: CGAffineTransform) -> CGRect { return r.applying(a) }

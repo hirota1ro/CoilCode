@@ -1,6 +1,6 @@
 import Cocoa
 
-extension CGImage {
+public extension CGImage {
 
     var pngData: Data? {
         let bitmapRep = NSBitmapImageRep(cgImage: self)
@@ -21,7 +21,7 @@ extension CGImage {
     }
 }
 
-extension CGImage {
+public extension CGImage {
 
     static func create(size: CGSize, _ callback: (CGContext) -> Void) throws -> CGImage? {
         let bytesPerPixel: Int = 4

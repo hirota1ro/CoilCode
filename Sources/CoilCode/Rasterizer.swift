@@ -1,4 +1,5 @@
 import Foundation
+import CGLib
 
 struct Rasterizer {
     let size: CGSize
