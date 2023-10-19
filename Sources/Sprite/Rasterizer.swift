@@ -1,18 +1,19 @@
 import Foundation
 import CGLib
 
-struct Rasterizer {
+public struct Rasterizer {
     let size: CGSize
     let backgroundColor: CGColor?
+
+    public init(size: CGSize, backgroundColor: CGColor? = nil) {
+        self.size = size
+        self.backgroundColor = backgroundColor
+    }
 }
 
-extension Rasterizer {
+public extension Rasterizer {
 
-    init(size: CGSize) {
-        self.init(size: size, backgroundColor: nil)
-    }
-
-    func image(with sprite: Sprite) throws -> CGImage {
+    func image(with sprite: Sprite) throws -> CGImage? {
         let image = try CGImage.create(size: size) { context in
             if let backgroundColor = backgroundColor {
                 context.setFillColor(backgroundColor)
@@ -26,7 +27,7 @@ extension Rasterizer {
             context.translateBy(x: -center.x, y: -center.y)
             sprite.draw(context: GraphicsContext(cg: context))
         }
-        guard let image = image else { throw InterpreterError.noContext }
+        // guard let image = image else { throw InterpreterError.noContext }
         return image
     }
 }

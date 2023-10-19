@@ -1,5 +1,5 @@
 import XCTest
-@testable import CoilCode
+@testable import Sprite
 
 class GraphicsTests: XCTestCase {
 

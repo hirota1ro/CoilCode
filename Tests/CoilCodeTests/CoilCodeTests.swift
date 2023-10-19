@@ -1,5 +1,6 @@
 import XCTest
 @testable import CoilCode
+import Sprite
 
 class CoilCodeTests: XCTestCase {
 
@@ -21,8 +22,8 @@ class CoilCodeTests: XCTestCase {
         interpreter.depthLimit = 300
         let sprite = try interpreter.interpret(script: script)
         let raster = Rasterizer(size: CGSize(width: 256, height: 256), backgroundColor: .white)
-        let image = try raster.image(with: sprite)
-        guard let data = image.pngData else { throw InterpreterError.noPngData }
+        guard let image = try raster.image(with: sprite) else { fatalError() }
+        guard let data = image.pngData else { fatalError() }
         let dir = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first!
         let fileURL = dir.appendingPathComponent("CoilCodeTests.png")
         try data.write(to: fileURL, options: .atomic)
@@ -47,8 +48,8 @@ class CoilCodeTests: XCTestCase {
         interpreter.scaleLimit = 0.001
         let sprite = try interpreter.interpret(script: script)
         let raster = Rasterizer(size: CGSize(width: 256, height: 256), backgroundColor: .white)
-        let image = try raster.image(with: sprite)
-        guard let data = image.pngData else { throw InterpreterError.noPngData }
+        guard let image = try raster.image(with: sprite) else { fatalError() }
+        guard let data = image.pngData else { fatalError() }
         let dir = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first!
         let fileURL = dir.appendingPathComponent("CoilCodeTests2.png")
         try data.write(to: fileURL, options: .atomic)
@@ -74,8 +75,8 @@ class CoilCodeTests: XCTestCase {
         interpreter.scaleLimit = 0.0001
         let sprite = try interpreter.interpret(script: script)
         let raster = Rasterizer(size: CGSize(width: 256, height: 256), backgroundColor: .white)
-        let image = try raster.image(with: sprite)
-        guard let data = image.pngData else { throw InterpreterError.noPngData }
+        guard let image = try raster.image(with: sprite) else { fatalError() }
+        guard let data = image.pngData else { fatalError() }
         let dir = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first!
         let fileURL = dir.appendingPathComponent("CoilCodeTests3.png")
         try data.write(to: fileURL, options: .atomic)

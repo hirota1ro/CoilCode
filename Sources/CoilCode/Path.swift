@@ -1,4 +1,5 @@
 import Foundation
+import Sprite
 
 struct Path {
     let name: String

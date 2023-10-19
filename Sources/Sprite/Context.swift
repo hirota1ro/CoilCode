@@ -1,7 +1,7 @@
 import Foundation
 import CGLib
 
-protocol Context {
+public protocol Context {
     var ctm: CGAffineTransform { get }
     func saveGState()
     func restoreGState()

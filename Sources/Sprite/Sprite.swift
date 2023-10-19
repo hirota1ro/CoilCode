@@ -1,16 +1,16 @@
 import Foundation
 
-class Sprite {
-    lazy var children: [Sprite] = []
-    lazy var graphics: [Graphics] = []
-    var affine: CGAffineTransform
+public class Sprite {
+    public lazy var children: [Sprite] = []
+    public lazy var graphics: [Graphics] = []
+    public var affine: CGAffineTransform
 
-    init(affine: CGAffineTransform = .identity) {
+    public init(affine: CGAffineTransform = .identity) {
         self.affine = affine
     }
 }
 
-extension Sprite {
+public extension Sprite {
 
     var frame: CGRect {
         return bounds.applying(affine)
@@ -36,7 +36,7 @@ extension Sprite {
     }
 }
 
-extension Sprite {
+public extension Sprite {
 
     func append(child: Sprite) {
         children.append(child)
@@ -57,7 +57,7 @@ extension Sprite {
 
 extension Sprite: DescriptionAsTreeNode {
     func getChildren() -> [DescriptionAsTreeNode] { return children }
-    var description: String {
+    public var description: String {
         return "<Sprite A=\(affine) B=\(bounds)>"
     }
 }

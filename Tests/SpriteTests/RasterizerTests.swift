@@ -1,5 +1,5 @@
 import XCTest
-@testable import CoilCode
+@testable import Sprite
 
 class RasterizerTests: XCTestCase {
 
@@ -11,8 +11,8 @@ class RasterizerTests: XCTestCase {
         sprite.add(graphics: PathStrokeGraphics(path: bp, color: .black, strokeWidth: 1))
         //
         let raster = Rasterizer(size: size)
-        let image = try raster.image(with: sprite)
-        guard let data = image.pngData else { throw InterpreterError.noPngData }
+        guard let image = try raster.image(with: sprite) else { fatalError() }
+        guard let data = image.pngData else { fatalError() }
         let dir = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first!
         let fileURL = dir.appendingPathComponent("RasterizerTests.png")
         try data.write(to: fileURL, options: .atomic)

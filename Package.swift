@@ -15,12 +15,18 @@ let package = Package(
         .target(
             name: "CGLib",
             dependencies: []),
+        .target(
+            name: "Sprite",
+            dependencies: ["CGLib"]),
         .executableTarget(
             name: "CoilCode",
-            dependencies: ["CGLib", .product(name: "ArgumentParser", package: "swift-argument-parser") ]),
+            dependencies: ["CGLib", "Sprite", .product(name: "ArgumentParser", package: "swift-argument-parser") ]),
         .testTarget(
             name: "CGLibTests",
             dependencies: ["CGLib"]),
+        .testTarget(
+            name: "SpriteTests",
+            dependencies: ["Sprite"]),
         .testTarget(
             name: "CoilCodeTests",
             dependencies: ["CoilCode"]),

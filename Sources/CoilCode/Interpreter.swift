@@ -1,5 +1,6 @@
 import Foundation
 import CGLib
+import Sprite
 
 class Interpreter {
     var generator: LinearCongruentialGenerator64
