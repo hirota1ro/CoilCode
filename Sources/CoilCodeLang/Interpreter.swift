@@ -3,13 +3,13 @@ import CGLib
 import Sprite
 
 public class Interpreter {
-    public var generator: LinearCongruentialGenerator64
+    var generator: LinearCongruentialGenerator64
 
-    public var shapeMap: [String: Shape] = [:]
-    public var pathMap: [String: Path] = [:]
+    var shapeMap: [String: Shape] = [:]
+    var pathMap: [String: Path] = [:]
     var probMap: [String: Probability] = [:]
     var stack: [Env] = []
-    public var ctm: CGAffineTransform = .identity
+    var ctm: CGAffineTransform = .identity
 
     public var scaleLimit: CGFloat = 0.01
     public var depthLimit: Int = 10

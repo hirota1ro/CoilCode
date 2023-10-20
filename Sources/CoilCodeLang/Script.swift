@@ -5,13 +5,22 @@ public struct Script {
     public let declare: Declare
     public let shapes: [Shape]
 
-    public init(start: String, declare: Declare, shape: Shape) {
+    public init(start: String, declare: Declare, shapes: [Shape]) {
+        self.start = start
+        self.declare = declare
+        self.shapes = shapes
+    }
+}
+
+public extension Script {
+
+    init(start: String, declare: Declare, shape: Shape) {
         self.start = start
         self.declare = declare
         self.shapes = [shape]
     }
 
-    public init(start: String, declare: Declare, _ shapes: Shape...) {
+    init(start: String, declare: Declare, _ shapes: Shape...) {
         self.start = start
         self.declare = declare
         self.shapes = shapes
