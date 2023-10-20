@@ -28,11 +28,11 @@ extension Interpreter {
     }
 
     public func interpret(script: Script) throws -> Sprite {
-        guard stack.isEmpty else { throw InterpreterError.bug }
+        guard stack.isEmpty else { throw FatalError.bug }
         push(sprite: Sprite(), brush: Brush(thickness: 0.1, color: .black))
         try visit(script: script)
         let top = pop()
-        guard stack.isEmpty else { throw InterpreterError.bug }
+        guard stack.isEmpty else { throw FatalError.bug }
         return top
     }
 
@@ -137,13 +137,14 @@ extension Interpreter: ValueMediator {
 }
 
 enum InterpreterError: Error {
-    case notImplementation
     case noShape(String)
     case noPath(String)
     case noVariable(String)
     case duplicate(String)
-    case bug
-    case noContext
-    case noPngData
     case syntax
+}
+
+enum FatalError: Error {
+    case notImplementation
+    case bug
 }
