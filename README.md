@@ -1,6 +1,6 @@
-# Coil Code - A Programing Language, Diagram base, Context Free Art like
+# Coil Code - A Programing System, Diagram-base, "Context Free Art"-like
 
-## Referenced
+## Reference
 
 Context Free Art
 https://www.contextfreeart.org
