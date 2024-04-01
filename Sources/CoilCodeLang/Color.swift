@@ -1,4 +1,5 @@
 import Foundation
+import CoreGraphics
 
 public struct Color {
     public var components: Components

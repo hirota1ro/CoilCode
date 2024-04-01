@@ -1,4 +1,5 @@
 import Foundation
+import CoreGraphics
 
 public struct Brush {
     public var thickness: Float = 0.1

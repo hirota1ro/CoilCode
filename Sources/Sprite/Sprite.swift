@@ -1,4 +1,5 @@
 import Foundation
+import CoreGraphics
 
 public class Sprite {
     public lazy var children: [Sprite] = []

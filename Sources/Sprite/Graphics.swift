@@ -1,4 +1,5 @@
 import Foundation
+import CoreGraphics
 
 public protocol Graphics {
     var bounds: CGRect { get }
